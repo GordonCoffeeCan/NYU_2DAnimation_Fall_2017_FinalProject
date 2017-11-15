@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1792031620052372}
+  m_IsPrefabParent: 1
+--- !u!1 &1792031620052372
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4514121298379684}
+  - component: {fileID: 114343552006799660}
+  m_Layer: 0
+  m_Name: room
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4514121298379684
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1792031620052372}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114343552006799660
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1792031620052372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dde228d0e59ff4ff6acbec9bb6ebdc40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomAuthor: Reskin Class
+  designedRoomFile: {fileID: 0}
+  localTilePrefabs: []
+  roomGridX: 0
+  roomGridY: 0
+  rockPrefab: {fileID: 1387771116485768, guid: 21e37532519354da5a5e1e47f0fb7ce4, type: 2}
+  explodingRockPrefab: {fileID: 1387771116485768, guid: 57a179061372c465ca936c44c4fd30f8,
+    type: 2}
+  enemyPrefab: {fileID: 1097009321995878, guid: 05c2b8dcb99474f2bbc1618b81b7dcca,
+    type: 2}
+  brutalEnemyPrefab: {fileID: 1097009321995878, guid: 535b1ffdfbd3746539838dacc7da2cd1,
+    type: 2}
+  projectileShooter: {fileID: 1387771116485768, guid: 588bcb394b77d412783d25938b362388,
+    type: 2}
+  decorationPrefabs:
+  - {fileID: 1558837078141322, guid: 062d7206033074288aa286acc73b1e40, type: 2}
+  - {fileID: 1558837078141322, guid: 18f5a0f7510fc4ed7b38e61e442d644f, type: 2}
+  minNumRocks: 4
+  maxNumRocks: 14
+  minNumEnemies: 1
+  maxNumEnemies: 4
+  minBrutal: 0
+  maxBrutal: 1
+  decorationProbability: 0.1
+  projectilerProbability: 1
+  borderWallProbability: 0.7
+  RockExplodesProbability: 0.1
