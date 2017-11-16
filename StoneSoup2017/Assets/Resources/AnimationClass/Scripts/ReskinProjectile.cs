@@ -34,9 +34,15 @@ public class ReskinProjectile : Tile {
 	// When we collide with something in the air, we try to deal damage to it.
 	public virtual void OnCollisionEnter2D(Collision2D collision) {
 		Tile otherTile = collision.gameObject.GetComponent<Tile>();
+		if (otherTile == null) {
+			Destroy (gameObject);
+			return;
+		}
 		if (otherTile != tileThatShotUs && !otherTile.hasTag(TileTags.Gun)) {
 			otherTile.takeDamage (this, 1);
-			otherTile.addForce (GetComponent<Rigidbody2D>().velocity.normalized * damageForce);
+			if (otherTile.GetComponent<Rigidbody2D> ()) {
+				otherTile.addForce (GetComponent<Rigidbody2D> ().velocity.normalized * damageForce);
+			}
 			Destroy (gameObject);
 		}
 	}

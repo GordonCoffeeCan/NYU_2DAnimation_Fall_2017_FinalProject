@@ -45,7 +45,6 @@ public class ReskinProjectileSpawner : Tile {
 		// Finally, here's where we get the throw force.
 		GameObject myProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
 		myProjectile.GetComponent<ReskinProjectile> ().setShooter (_tileHoldingUs);
-		Debug.Log ("shot by " + _tileHoldingUs.name);
 		myProjectile.GetComponent<Rigidbody2D>().AddForce(shootDir*shootForce);
 	}
 
