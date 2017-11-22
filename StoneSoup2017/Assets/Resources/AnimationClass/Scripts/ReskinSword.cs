@@ -66,8 +66,9 @@ public class ReskinSword : Tile {
 		transform.parent = swingPivot;
 
 		// These values can be tuned to make us rotate/offset differently from our pivot.
-		transform.localPosition = new Vector3(1.2f, 0, 0);
-		transform.localRotation = Quaternion.Euler(0, 0, -90);
+		transform.localPosition = new Vector3(0.5f, -1f, 0);
+        transform.localRotation = Quaternion.Euler(0, 0, -90);
+		
 
 
 
@@ -83,12 +84,17 @@ public class ReskinSword : Tile {
 	}
 
 	void Update() {
-		// Basically, we keep swinging until we've passed 360 degrees and then
-		// undo the switcheroo from earlier to go back to normal.
-		if (_swinging) {
-			_swingAngle += swingSpeed*Time.deltaTime;
-			swingPivot.transform.localRotation = Quaternion.Euler(0, 0, _pivotStartAngle+_swingAngle);
-			if (_swingAngle >= 360) {
+        // Basically, we keep swinging until we've passed 360 degrees and then
+        // undo the switcheroo from earlier to go back to normal.
+        if (_swinging) {
+			//_swingAngle += swingSpeed*Time.deltaTime;
+            if (Player._instance.spriteFliped) {
+                _swingAngle += swingSpeed * Time.deltaTime;
+            } else {
+                _swingAngle += -swingSpeed * Time.deltaTime;
+            }
+            swingPivot.transform.localRotation = Quaternion.Euler(0, 0, _pivotStartAngle+_swingAngle);
+			if (_swingAngle >= 360 || _swingAngle <= -360) {
 				transform.parent = _tileHoldingUs.transform;
 				transform.localPosition = new Vector3(heldOffset.x, heldOffset.y, -0.1f);
 				transform.localRotation = Quaternion.Euler(0, 0, heldAngle);

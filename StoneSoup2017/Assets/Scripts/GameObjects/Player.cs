@@ -32,8 +32,10 @@ public class Player : Tile {
 	protected float _iFrameTimer = 0;
 	public float totalIFrameTime = 0.5f;
 
+    [HideInInspector] public bool spriteFliped = false;
+
 	// Like the GameManager, there should always only be one player, globally accessible
-	protected static Player _instance = null;
+	public static Player _instance = null;
 	public static Player instance {
 		get { return _instance; }
 	}
@@ -103,10 +105,13 @@ public class Player : Tile {
 		// We flip our sprite based on whether we're facing right or not.
 		if (attemptToMoveDir.x > 0) {
 			_sprite.flipX = false;
-		}
+            spriteFliped = _sprite.flipX;
+
+        }
 		else if (attemptToMoveDir.x < 0) {
 			_sprite.flipX = true;
-		}
+            spriteFliped = _sprite.flipX;
+        }
 
 		// We use the walk direction variable to tell our animator what animation to play.
 		if (attemptToMoveDir.y > 0 && attemptToMoveDir.x == 0) {

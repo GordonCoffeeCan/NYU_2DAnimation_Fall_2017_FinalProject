@@ -44,8 +44,14 @@ public class ReskinProjectileSpawner : Tile {
 
 		// Finally, here's where we get the throw force.
 		GameObject myProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
+        if (shootDir.y >= 0) {
+            myProjectile.transform.rotation = Quaternion.Euler(new Vector3(0, 0, Vector2.Angle(new Vector2(shootDir.x, shootDir.y), Vector2.right)));
+        } else if(shootDir.y < 0) {
+            myProjectile.transform.rotation = Quaternion.Euler(new Vector3(0, 0, -Vector2.Angle(new Vector2(shootDir.x, shootDir.y), Vector2.right)));
+        }
+        
 		myProjectile.GetComponent<ReskinProjectile> ().setShooter (_tileHoldingUs);
-		myProjectile.GetComponent<Rigidbody2D>().AddForce(shootDir*shootForce);
+		myProjectile.GetComponent<Rigidbody2D>().AddForce(shootDir * shootForce);
 	}
 
 
