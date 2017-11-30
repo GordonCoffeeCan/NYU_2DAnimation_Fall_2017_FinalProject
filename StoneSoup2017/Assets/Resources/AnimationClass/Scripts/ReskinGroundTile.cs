@@ -8,16 +8,18 @@ public class ReskinGroundTile : Tile {
 	public Sprite[] altSprites;
 
 	//probability we won't change sprite (0 is always change, 1 is never change)
-	public float probablityDefaultSprite;
+	//public float probablityDefaultSprite;
 
 
 	// Use this for initialization
 	void Start () {
-		float rand = Random.value;
+        /*float rand = Random.value;
 
 		if (rand > probablityDefaultSprite) {
 			int tileToApply = Random.Range (0, altSprites.Length);
 			GetComponent<SpriteRenderer>().sprite = altSprites [tileToApply];
-		}
-	}
+		}*/
+
+        GetComponent<SpriteRenderer>().sprite = altSprites[Random.Range(0, altSprites.Length)];
+    }
 }
