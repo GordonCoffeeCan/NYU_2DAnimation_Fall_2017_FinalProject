@@ -22,7 +22,6 @@ public class Player : Tile {
 	private Tile tileThatKilledMe;
 	private bool dying;
 
-
 	protected int _walkDirection = 2;
 
 	// Used to ensure we don't drop an item and then pick up the exact same item.
@@ -90,36 +89,37 @@ public class Player : Tile {
 
 		if (tryToMoveUp) {
 			attemptToMoveDir += Vector2.up;
-		}
+        }
 		else if (tryToMoveDown) {
-			attemptToMoveDir -= Vector2.up;			
-		}
+			attemptToMoveDir -= Vector2.up;
+        }
 		if (tryToMoveRight) {
 			attemptToMoveDir += Vector2.right;
-		}
+        }
 		else if (tryToMoveLeft) {
 			attemptToMoveDir -= Vector2.right;
-		}
+        }
 		attemptToMoveDir.Normalize();
 
 		// We flip our sprite based on whether we're facing right or not.
 		if (attemptToMoveDir.x > 0) {
 			_sprite.flipX = false;
             spriteFliped = _sprite.flipX;
-
+            
         }
 		else if (attemptToMoveDir.x < 0) {
 			_sprite.flipX = true;
             spriteFliped = _sprite.flipX;
+            
         }
 
 		// We use the walk direction variable to tell our animator what animation to play.
 		if (attemptToMoveDir.y > 0 && attemptToMoveDir.x == 0) {
 			_walkDirection = 0;
-		}
+        }
 		else if (attemptToMoveDir.y < 0 && attemptToMoveDir.x == 0) {
 			_walkDirection = 2;
-		}
+        }
 		else if (attemptToMoveDir.x != 0) {
 			_walkDirection = 1;
 		}
