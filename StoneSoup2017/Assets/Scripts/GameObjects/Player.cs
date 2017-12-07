@@ -12,6 +12,8 @@ public class Player : Tile {
 	// SFX we play
 	public AudioClip pickupDropSound, hurtSound, exitSound;
 
+    public Animator blackMask;
+
 	// A reference to the object that displays when we can pickup an item.
 	public GameObject handSymbol;
 

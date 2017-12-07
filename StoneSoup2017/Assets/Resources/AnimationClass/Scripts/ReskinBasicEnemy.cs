@@ -161,7 +161,6 @@ public class ReskinBasicEnemy : Tile {
 			toOtherTile.Normalize();
 			otherTile.addForce(damageForce*toOtherTile);
 			animator.Play ("attack");
-			Debug.Log ("wahoo");
 		}
 	}
 

@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212104378736312824}
   - component: {fileID: 114210825189135092}
   - component: {fileID: 95205177250112768}
+  - component: {fileID: 114722409403841674}
   m_Layer: 0
   m_Name: red_zap
   m_TagString: Untagged
@@ -68,6 +69,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14ce6d1d335d8472b9384d7fef67aec2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114722409403841674
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1028137201516130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5725f9a5e5fd594ab817f97208e0366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212104378736312824
