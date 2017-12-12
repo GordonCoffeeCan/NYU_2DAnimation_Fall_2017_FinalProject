@@ -28,9 +28,16 @@ public class ReskinProjectileSpawner : Tile {
 		}
 	}
 
+    private void Update() {
+        if (_tileHoldingUs) {
+            float angle = Mathf.Atan2(_tileHoldingUs.aimDirection.y, _tileHoldingUs.aimDirection.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        }
+    }
 
-	// The idea is that we get thrown when we're used
-	public override void useAsItem(Tile tileUsingUs) {
+
+    // The idea is that we get thrown when we're used
+    public override void useAsItem(Tile tileUsingUs) {
 		if (_tileHoldingUs != tileUsingUs) {
 			return;
 		}
