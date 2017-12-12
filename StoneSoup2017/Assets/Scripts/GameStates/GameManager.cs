@@ -77,6 +77,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void Start() {
+        Cursor.visible = false;
 	}
 	
 	public void Update () {
@@ -86,7 +87,8 @@ public class GameManager : MonoBehaviour {
 
 		// See if we should return to the main menu screen?
 		if (Input.GetKeyDown(KeyCode.Escape)) {
-			SceneManager.LoadScene("MainMenuScene");
+            Cursor.visible = true;
+            SceneManager.LoadScene("MainMenuScene");
 		}
 
 
@@ -187,7 +189,8 @@ public class GameManager : MonoBehaviour {
 			finalT -= Time.unscaledDeltaTime;
 		}
 		Time.timeScale = 1;
-		SceneManager.LoadScene("GameOverScene");
+        Cursor.visible = true;
+        SceneManager.LoadScene("GameOverScene");
 
 	}
 
@@ -224,7 +227,8 @@ public class GameManager : MonoBehaviour {
 			}
 		}
 		Time.timeScale = 1;
-		SceneManager.LoadScene("LevelCompleteScene");
+        Cursor.visible = true;
+        SceneManager.LoadScene("LevelCompleteScene");
 	}
 
 	// END GAME LOGIC
